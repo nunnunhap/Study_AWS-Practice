@@ -3,7 +3,7 @@
 
 PROJECT="study-1.0.0"
 PROJECT_NAME=study
-PROJECT_FULL_PATH="/home/ec2-user/app2/step2"
+PROJECT_FULL_PATH="/home/ec2-user/app3/step2"
 JAR_FILE="$PROJECT_FULL_PATH/$PROJECT.jar"
 LOG_PATH="$PROJECT_FULL_PATH/logs"
 

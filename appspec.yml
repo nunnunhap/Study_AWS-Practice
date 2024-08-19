@@ -3,7 +3,7 @@ os: linux
 
 files:
   - source:  /
-    destination: /home/ec2-user/app2/step2/study
+    destination: /home/ec2-user/app3/step2/study
     overwrite: yes
 
 permissions:
