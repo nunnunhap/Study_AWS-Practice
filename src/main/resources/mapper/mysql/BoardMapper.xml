@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.docmall.demo.mapper.BoardMapper">
+
+	<insert id="write" parameterType="com.docmall.demo.domain.BoardVO">
+	
+		INSERT INTO
+			BOARD(title, content, writer)
+		VALUES
+			(#{title}, #{content}, #{writer} )
+		
+	</insert>
+	
+	<select id="list" resultType="com.docmall.demo.domain.BoardVO">
+	
+		SELECT 
+			bno, title, content, writer, regdate, updatedate, viewcount
+		FROM 
+			BOARD 
+		ORDER BY 
+			bno DESC
+	
+	</select>
+
+	<update id="readCount" parameterType="Long">
+	
+		UPDATE
+			BOARD
+		SET
+			viewcount = viewcount + 1
+		WHERE
+			bno = #{bno}
+	
+	</update>
+	
+	<select id="get" resultType="com.docmall.demo.domain.BoardVO" parameterType="Long">
+	
+		SELECT 
+			bno, title, content, writer, regdate, updatedate, viewcount
+		FROM 
+			BOARD 
+		WHERE 
+			bno = #{bno}
+	
+	</select>
+	
+	<update id="modify" parameterType="com.docmall.demo.domain.BoardVO">
+	
+		UPDATE 
+			BOARD
+    	SET 
+    		title = #{title}, content = #{content}, updatedate = now()
+		WHERE 
+			bno = #{bno}
+	
+	</update>
+	
+	<delete id="delete" parameterType="Long">
+	
+		DELETE FROM
+			BOARD
+		WHERE
+			bno = #{bno}			
+	
+	
+	</delete>
+
+</mapper>
