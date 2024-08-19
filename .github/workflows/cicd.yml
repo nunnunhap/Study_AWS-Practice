@@ -9,9 +9,9 @@ on:
 env:
   PROJECT_NAME: study
   AWS_REGION: ap-northeast-2
-  AWS_S3_BUCKET: ezen-study-bucket
-  AWS_CODE_DEPLOY_APPLICATION: study
-  AWS_CODE_DEPLOY_GROUP: study-group
+  AWS_S3_BUCKET: study-deploy-bucket2
+  AWS_CODE_DEPLOY_APPLICATION: study-codedeploy-app
+  AWS_CODE_DEPLOY_GROUP: study-codedeploy-app-group
 
 jobs:
   build:
